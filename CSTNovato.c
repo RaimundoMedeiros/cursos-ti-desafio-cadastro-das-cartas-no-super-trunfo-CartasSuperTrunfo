@@ -65,5 +65,7 @@ int main()
     printf("| Pontos Turísticos: %-8d\n", pontos_turisticos[1]); 
     printf("=============================\n");
 
+    // Não consegui deixar bonitinho com a lateral fechada sem desalinhar dependendo dos valores :C
+
     return 0;
 }
