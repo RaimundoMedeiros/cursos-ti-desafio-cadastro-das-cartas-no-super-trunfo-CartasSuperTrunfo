@@ -14,7 +14,6 @@ int main()
     int pontosTuristicos1, pontosTuristicos2;
     float densidadePopulacional1, densidadePopulacional2;
     float pibPerCapita1, pibPerCapita2;
-    float superPoder1, superPoder2;
 
     // Entrada de Dados carta 1
     printf("Digite o estado da carta 1 (A-H): ");
@@ -58,33 +57,20 @@ int main()
 
     pibPerCapita2 = (pib2 * BILHAO) / (float)populacao2;
 
-    // Cálculo do Super Poder
-    superPoder1 = (float)populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCapita1 + (1 / densidadePopulacional1);
 
-    superPoder2 = (float)populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapita2 + (1 / densidadePopulacional2);
+    // comparação com o atributo "População"
+    printf("\nComparação de cartas (Atributo: População):\n");
+    printf("Carta 1 - %s (%c): %lu\n", cidade1, estado1, populacao1);      
+    printf("Carta 2 - %s (%c): %lu\n", cidade2, estado2, populacao2);
+    if (populacao1 > populacao2)
+    {
+        printf("Resultado: Carta 1 (%s) venceu!\n", cidade1);
+    }
+    else
+    {
+        printf("Resultado: Carta 2 (%s) venceu!\n", cidade2);
+    }
 
-    // Comparação dos atributos
-    int vPopulacao = populacao1 > populacao2;
-    int vArea = area1 > area2;
-    int vPib = pib1 > pib2;
-    int vPontosTuristicos = pontosTuristicos1 > pontosTuristicos2;
-    int vDensidadePopulacional = densidadePopulacional1 < densidadePopulacional2;
-    int vPibPerCapita = pibPerCapita1 > pibPerCapita2;
-    int vSuperPoder = superPoder1 > superPoder2;
-
-    // Array para exibir vencedor
-    const char *resultado[] = {"Carta 2 venceu (0)", "Carta 1 venceu (1)"};
-
-    // Saída dos resultados:
-    printf("\nComparação de Cartas:\n");
-    printf("População: %s\n", resultado[vPopulacao]);
-    printf("Área: %s\n", resultado[vArea]);
-    printf("PIB: %s\n", resultado[vPib]);
-    printf("Pontos Turísticos: %s\n", resultado[vPontosTuristicos]);
-    printf("Densidade Populacional: %s\n", resultado[vDensidadePopulacional]);
-    printf("PIB per Capita: %s\n", resultado[vPibPerCapita]);
-    printf("Super Poder: %s\n", resultado[vSuperPoder]);
-    printf("\n");
 
     return 0;
 }
